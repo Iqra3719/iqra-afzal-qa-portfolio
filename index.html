@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Iqra Afzal | QA Engineer &amp; SDET | Test Automation</title>
+<meta name="description" content="QA Engineer and SDET in Lahore. Playwright and JavaScript test automation, API testing, AI testing and CI/CD. Explore projects and results.">
+<meta name="keywords" content="QA Engineer, SQA Engineer, SDET, QA Automation Engineer, Software Testing, Playwright, API Testing, JavaScript, AI Testing, Test Automation">
+<meta name="author" content="Iqra Afzal">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Iqra Afzal | QA Engineer &amp; SDET">
+<meta property="og:description" content="QA/SDET portfolio: Playwright automation, API testing, AI application testing and CI/CD projects with documented results.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#f5f7fa">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Iqra Afzal","jobTitle":"QA Engineer | SDET","address":{"@type":"PostalAddress","addressLocality":"Lahore","addressCountry":"PK"},"email":"mailto:ciqra632@gmail.com","sameAs":["https://github.com/Iqra3719","https://linkedin.com/in/iqra-afzal-ab0a7b3a0"]}
+</script>
+<style>
+:root{
+  --bg:#f5f7fa; --surface:#ffffff; --surface-2:#eef2f7; --text:#0f1c2e; --muted:#46566c;
+  --border:#d9e1ec; --accent:#0a7c8c; --accent-hover:#086574; --on-accent:#ffffff; --accent-soft:#e1f2f4;
+  --pass:#12783d; --pass-soft:#e2f4e9; --shadow:0 1px 2px rgba(15,28,46,.06);
+  --font:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --hdr:64px; --max:1120px;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0a121f; --surface:#111c2f; --surface-2:#16233a; --text:#e8eef7; --muted:#9fb1c8;
+    --border:#243453; --accent:#4cc3d9; --accent-hover:#7bd5e6; --on-accent:#04202a; --accent-soft:#12303c;
+    --pass:#4ade80; --pass-soft:#12301f; --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0a121f; --surface:#111c2f; --surface-2:#16233a; --text:#e8eef7; --muted:#9fb1c8;
+  --border:#243453; --accent:#4cc3d9; --accent-hover:#7bd5e6; --on-accent:#04202a; --accent-soft:#12303c;
+  --pass:#4ade80; --pass-soft:#12301f; --shadow:none;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hdr) + 12px + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);font-size:1rem;line-height:1.65;overflow-x:hidden}
+img,svg{max-width:100%}
+a{color:var(--accent);text-underline-offset:3px}
+a:hover{color:var(--accent-hover)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:var(--on-accent);padding:.6rem 1rem;border-radius:6px;z-index:100}
+.skip:focus{left:8px}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 1.25rem}
+section{padding:4.5rem 0}
+section.alt{background:var(--surface-2)}
+h1,h2,h3,h4{line-height:1.2;margin:0;font-weight:600;letter-spacing:-.01em}
+h2{font-size:clamp(1.65rem,3.2vw,2.15rem);margin-bottom:.6rem}
+h3{font-size:1.15rem}
+.lede{color:var(--muted);max-width:68ch;margin:0 0 2rem}
+.sec-head{border-left:4px solid var(--accent);padding-left:1rem;margin-bottom:2rem}
+.sec-head .lede{margin:0}
+p{margin:0 0 1rem}
+ul{margin:0;padding-left:1.15rem}
+li{margin-bottom:.35rem}
+
+/* header */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;height:var(--hdr);background:var(--bg);border-bottom:1px solid var(--border)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:100%;gap:1rem}
+.brand{font-weight:700;color:var(--text);text-decoration:none;font-size:1.05rem;white-space:nowrap}
+.brand span{color:var(--muted);font-weight:400;margin-left:.5rem;font-size:.9rem}
+nav.main{display:flex;align-items:center;gap:.25rem}
+nav.main a.nl{color:var(--text);text-decoration:none;font-size:.92rem;padding:.45rem .6rem;border-radius:6px;white-space:nowrap}
+nav.main a.nl:hover{background:var(--surface-2)}
+nav.main a.nl[aria-current="true"]{color:var(--accent);font-weight:600}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.icon-btn{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:8px;cursor:pointer}
+.icon-btn:hover{border-color:var(--accent)}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.menu-btn{display:none}
+.theme-dark-ico{display:none}
+:root[data-theme="dark"] .theme-light-ico{display:none}
+:root[data-theme="dark"] .theme-dark-ico{display:inline}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .theme-light-ico{display:none}
+  :root:not([data-theme="light"]) .theme-dark-ico{display:inline}
+}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.15rem;border-radius:8px;font-weight:600;font-size:.95rem;text-decoration:none;border:1.5px solid transparent;cursor:pointer;min-height:44px;font-family:inherit}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{background:var(--accent-hover);color:var(--on-accent)}
+.btn-outline{border-color:var(--accent);color:var(--accent);background:transparent}
+.btn-outline:hover{background:var(--accent-soft);color:var(--accent-hover)}
+.btn-ghost{color:var(--text);border-color:var(--border);background:var(--surface)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--text)}
+.btn-sm{padding:.45rem .85rem;min-height:40px;font-size:.88rem}
+
+/* hero */
+.hero{padding:3.5rem 0 3rem}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.role-line{color:var(--accent);font-weight:600;margin-bottom:1rem}
+.hero h1{font-size:clamp(2.1rem,4.6vw,3.2rem);letter-spacing:-.025em;margin-bottom:1.1rem}
+.hero h1 .sub{display:block;color:var(--muted);font-weight:500}
+.hero p.lead{font-size:1.1rem;color:var(--muted);max-width:56ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:.65rem;margin:1.5rem 0 1.25rem}
+.avail{display:inline-flex;align-items:center;gap:.5rem;background:var(--pass-soft);color:var(--pass);font-weight:600;font-size:.9rem;padding:.35rem .8rem;border-radius:999px}
+.avail i{width:8px;height:8px;border-radius:50%;background:var(--pass);display:inline-block}
+.stack-line{margin-top:1.4rem;color:var(--muted);font-size:.92rem}
+.stack-line b{color:var(--text);font-weight:600}
+.term{background:#0d1626;color:#d6e2f2;border-radius:12px;border:1px solid #223250;font-family:var(--mono);font-size:.86rem;line-height:1.75;overflow:hidden;box-shadow:0 18px 40px rgba(10,20,40,.18)}
+.term-bar{display:flex;align-items:center;gap:.4rem;padding:.65rem .9rem;background:#111d33;border-bottom:1px solid #223250;color:#8ea3bf;font-size:.78rem}
+.term-bar i{width:10px;height:10px;border-radius:50%;background:#2c3d5c;display:inline-block}
+.term-bar span{margin-left:.5rem}
+.term-body{padding:1rem 1.1rem 1.2rem}
+.tl{display:flex;flex-wrap:wrap;gap:.2rem .8rem}
+.tl .ok{color:#4ade80}
+.tl .cmd{color:#8ea3bf}
+.tl .res{color:#e8eef7;margin-left:auto}
+.term-line{opacity:1}
+.js .term-line{opacity:0;animation:tshow .01s linear forwards}
+.js .term-line:nth-child(1){animation-delay:.2s}
+.js .term-line:nth-child(2){animation-delay:.9s}
+.js .term-line:nth-child(3){animation-delay:1.5s}
+.js .term-line:nth-child(4){animation-delay:2.1s}
+.js .term-line:nth-child(5){animation-delay:2.7s}
+@keyframes tshow{to{opacity:1}}
+.term-note{margin-top:.9rem;color:#8ea3bf;font-size:.76rem;line-height:1.5;font-family:var(--font)}
+
+/* results */
+.results{padding:2.5rem 0;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;list-style:none;padding:0;margin:0}
+.metrics li{margin:0;padding:1rem 1rem 1rem 1.1rem;border-left:3px solid var(--pass)}
+.metrics .num{display:block;font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:700;color:var(--text);line-height:1.1;letter-spacing:-.02em}
+.metrics .lab{display:block;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+
+/* cards, grid */
+.grid{display:grid;gap:1.1rem}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.3rem;box-shadow:var(--shadow);min-width:0}
+.card h3{margin-bottom:.5rem}
+.card p{color:var(--muted)}
+.pills{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;padding:0;margin:.4rem 0 0}
+.pills li{margin:0;padding:.25rem .65rem;border:1px solid var(--border);border-radius:999px;font-size:.85rem;background:var(--bg);color:var(--text)}
+.pills li.key{background:var(--accent-soft);border-color:var(--accent);color:var(--text);font-weight:600}
+.pills.small li{font-size:.8rem;padding:.15rem .55rem}
+.t-ico{width:40px;height:40px;border-radius:8px;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:.8rem}
+.tools{font-size:.88rem;color:var(--muted);margin:.6rem 0 0}
+.tools b{color:var(--text);font-weight:600}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:start}
+.timeline{list-style:none;margin:0;padding:0 0 0 1.4rem;border-left:2px solid var(--border)}
+.timeline li{position:relative;margin:0 0 1.2rem;padding-left:.4rem}
+.timeline li::before{content:"";position:absolute;left:calc(-1.4rem - 7px);top:.4rem;width:12px;height:12px;border-radius:50%;background:var(--surface);border:3px solid var(--accent)}
+.timeline li.now::before{background:var(--accent)}
+.timeline .when{display:block;font-size:.85rem;color:var(--muted)}
+.timeline .what{display:block;font-weight:600}
+.timeline .detail{display:block;color:var(--muted);font-size:.92rem}
+
+/* flow diagrams */
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:1rem 0}
+.flow .n{padding:.5rem .85rem;border:1.5px solid var(--border);border-radius:8px;background:var(--surface);font-weight:500;font-size:.92rem}
+.flow .n.hl{border-color:var(--accent);background:var(--accent-soft)}
+.flow .n.pass{border-color:var(--pass);background:var(--pass-soft);color:var(--pass);font-weight:600}
+.flow .ar{color:var(--muted);font-size:1.1rem}
+.flow .ar::before{content:"\2192"}
+
+/* AI */
+.ai-panel{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:1rem}
+.big-result{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap;background:var(--pass-soft);border:1px solid var(--pass);border-radius:10px;padding:1rem 1.25rem;margin-top:1.1rem}
+.big-result .num{font-size:2.4rem;font-weight:700;color:var(--pass);line-height:1}
+.big-result span.t{color:var(--text);font-weight:600}
+.big-result span.s{color:var(--muted);font-size:.9rem}
+.notice{border-left:4px solid var(--accent);background:var(--accent-soft);padding:.8rem 1rem;border-radius:0 8px 8px 0;margin:0 0 1.5rem;color:var(--text)}
+
+/* projects */
+.proj{display:flex;flex-direction:column}
+.proj.feat{border-color:var(--accent);border-width:1.5px}
+.proj .badge{align-self:flex-start;background:var(--accent);color:var(--on-accent);font-size:.78rem;font-weight:600;padding:.15rem .6rem;border-radius:999px;margin-bottom:.6rem}
+.proj dl{margin:.4rem 0 0}
+.proj dt{font-weight:600;font-size:.88rem;margin-top:.75rem}
+.proj dd{margin:.15rem 0 0;color:var(--muted);font-size:.93rem}
+.proj .res{margin-top:auto;padding-top:.9rem}
+.res-chip{display:inline-block;background:var(--pass-soft);color:var(--pass);font-weight:600;font-size:.88rem;padding:.3rem .7rem;border-radius:6px}
+.proj .links{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.9rem;align-items:center}
+.addinfo{color:var(--muted);font-size:.85rem;font-style:italic}
+
+/* case studies */
+.case{padding:2.5rem 0;border-top:1px solid var(--border)}
+.case:first-of-type{border-top:0;padding-top:0}
+.case h3{font-size:1.4rem;margin-bottom:.4rem}
+.case .two{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem}
+.case h4{font-size:1rem;margin:0 0 .5rem}
+.tbl-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.93rem}
+th,td{text-align:left;padding:.55rem .7rem;border-bottom:1px solid var(--border);vertical-align:top}
+th{font-weight:600;background:var(--surface-2)}
+.schema{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem;margin:1rem 0}
+.schema .tb{border:1.5px solid var(--border);border-radius:8px;background:var(--surface);overflow:hidden}
+.schema .tb b{display:block;background:var(--surface-2);padding:.4rem .7rem;font-family:var(--mono);font-size:.85rem}
+.schema .tb span{display:block;padding:.45rem .7rem;font-size:.85rem;color:var(--muted)}
+
+/* experience */
+.role{margin-bottom:1.1rem}
+.role-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.3rem 1rem;margin-bottom:.6rem}
+.role-head .meta{color:var(--muted);font-size:.92rem}
+details.role{padding:0}
+details.role summary{cursor:pointer;padding:1.1rem 1.3rem;list-style:none;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.3rem 1rem}
+details.role summary::-webkit-details-marker{display:none}
+details.role summary::after{content:"+";font-weight:700;color:var(--accent);margin-left:auto;font-size:1.3rem;line-height:1}
+details.role[open] summary::after{content:"\2212"}
+details.role .body{padding:0 1.3rem 1.2rem}
+details.role .body ul{color:var(--muted)}
+
+/* certs & edu */
+.cert{display:flex;gap:.9rem;align-items:flex-start}
+.cert .t-ico{margin:0}
+.cert.prime{border-color:var(--accent);border-width:1.5px}
+.cert h3{font-size:1rem;margin-bottom:.2rem}
+.cert p{margin:0;font-size:.92rem}
+
+/* links */
+.link-card{display:flex;align-items:center;gap:.9rem;text-decoration:none;color:var(--text)}
+.link-card:hover{border-color:var(--accent);color:var(--text)}
+.link-card .lt{font-weight:600;display:block}
+.link-card .lu{font-size:.85rem;color:var(--muted);word-break:break-all;display:block}
+.link-card .ext{margin-left:auto;color:var(--accent)}
+
+/* contact */
+.contact h2{font-size:clamp(1.8rem,3.8vw,2.6rem);max-width:22ch}
+.contact-list{list-style:none;padding:0;margin:1.5rem 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+.contact-list li{margin:0;display:flex;gap:.8rem;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.9rem 1rem;min-width:0}
+.contact-list .ico{color:var(--accent)}
+.contact-list a,.contact-list span{color:var(--text);word-break:break-word}
+.contact-list small{display:block;color:var(--muted);font-size:.8rem}
+
+footer{border-top:1px solid var(--border);padding:2rem 0;background:var(--surface)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem 2rem;align-items:center}
+.foot p{margin:0}
+.foot .muted{color:var(--muted);font-size:.9rem}
+.foot ul{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;padding:0;margin:0}
+.foot li{margin:0}
+
+/* responsive */
+@media (max-width:1120px){
+  .menu-btn{display:inline-flex}
+  nav.main{position:absolute;left:0;right:0;top:var(--hdr);background:var(--bg);border-bottom:1px solid var(--border);flex-direction:column;align-items:stretch;padding:.5rem 1.25rem 1rem;display:none;max-height:calc(100vh - var(--hdr));overflow-y:auto}
+  nav.main.open{display:flex}
+  nav.main a.nl{padding:.8rem .6rem;font-size:1rem}
+  .hdr-resume{display:none}
+  .brand span{display:none}
+}
+@media (max-width:960px){
+  .hero-grid,.about-grid,.case .two,.ai-panel{grid-template-columns:1fr}
+  .g3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .metrics{grid-template-columns:repeat(3,1fr)}
+  .schema{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  section{padding:3.2rem 0}
+  .g2,.g3,.g4,.contact-list{grid-template-columns:1fr}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .flow{flex-direction:column;align-items:stretch}
+  .flow .n{text-align:center}
+  .flow .ar{text-align:center}
+  .flow .ar::before{content:"\2193"}
+  .cta-row .btn{flex:1 1 calc(50% - .65rem);justify-content:center}
+  .tl .res{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .term-line{opacity:1}
+}
+@media print{header.site,.menu-btn,.theme-btn{display:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="Iqra Afzal, home">Iqra Afzal<span>QA Engineer | SDET</span></a>
+    <nav class="main" id="nav" aria-label="Primary">
+      <a class="nl" href="#home">Home</a>
+      <a class="nl" href="#about">About</a>
+      <a class="nl" href="#skills">Skills</a>
+      <a class="nl" href="#testing">Testing</a>
+      <a class="nl" href="#ai">AI Testing</a>
+      <a class="nl" href="#projects">Projects</a>
+      <a class="nl" href="#experience">Experience</a>
+      <a class="nl" href="#certifications">Certifications</a>
+      <a class="nl" href="#contact">Contact</a>
+    </nav>
+    <div class="hdr-actions">
+      <a class="btn btn-outline btn-sm hdr-resume" href="Iqra_Afzal_Resume_Final.pdf" target="_blank" rel="noopener">Resume</a>
+      <button class="icon-btn theme-btn" id="themeBtn" type="button" aria-label="Switch between light and dark theme">
+        <svg class="ico theme-light-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="ico theme-dark-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="home" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="role-line">QA Engineer | SDET | QA Automation Engineer</p>
+      <h1 id="hero-title">QA Engineer &amp; SDET.<span class="sub">Test automation you can trust.</span></h1>
+      <p class="lead">I test web, mobile, API and AI-powered applications, and automate the checks with Playwright, JavaScript and CI/CD pipelines. Manual testing taught me where software breaks; automation makes that knowledge repeatable.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#projects">Explore My Work</a>
+        <a class="btn btn-outline" href="https://github.com/Iqra3719" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>GitHub</a>
+        <a class="btn btn-ghost" href="Iqra_Afzal_Resume_Final.pdf" target="_blank" rel="noopener">Resume</a>
+        <a class="btn btn-ghost" href="#contact">Contact</a>
+      </div>
+      <p class="avail"><i aria-hidden="true"></i>Available for QA / SDET opportunities</p>
+      <p class="stack-line"><b>Day to day:</b> Playwright, JavaScript, Postman, SQL/MySQL, Git, CI/CD, Docker, Jira/Xray, Azure DevOps.</p>
+    </div>
+    <div class="term" role="img" aria-label="Test run summary: Playwright 18 of 18 passed, API validated, AI 6 of 6 passed, Azure pipeline run succeeded">
+      <div class="term-bar"><i></i><i></i><i></i><span>qa-run &mdash; summary</span></div>
+      <div class="term-body">
+        <div class="term-line tl"><span class="cmd">$ npx playwright test</span></div>
+        <div class="term-line tl"><span class="ok">&#10003;</span><span>Playwright (UI + API)</span><span class="res">18/18 passed</span></div>
+        <div class="term-line tl"><span class="ok">&#10003;</span><span>API (REST, authenticated)</span><span class="res">validated</span></div>
+        <div class="term-line tl"><span class="ok">&#10003;</span><span>AI evaluation</span><span class="res">6/6 passed</span></div>
+        <div class="term-line tl"><span class="ok">&#10003;</span><span>CI/CD (Azure Pipelines)</span><span class="res">run succeeded</span></div>
+        <p class="term-note">Figures come from my internship test runs at Ahmad Institute (Sep&ndash;Oct 2026).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results" id="results" aria-labelledby="results-title">
+  <div class="wrap">
+    <h2 id="results-title" style="margin-bottom:1.2rem">QA results</h2>
+    <ul class="metrics" id="metrics"></ul>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-title">
+  <div class="wrap about-grid">
+    <div>
+      <div class="sec-head"><h2 id="about-title">About</h2></div>
+      <p>I started in manual QA: writing test cases, finding defects, and learning how real releases break. Across almost two years of hands-on testing, most recently on large-scale financial web and mobile applications for a UK-based organization, I built the habit of thinking about risk before running a single test.</p>
+      <p>In September 2026 I completed a QA/SDET internship at Ahmad Institute and moved that foundation into automation. I built a Playwright and JavaScript framework with the Page Object Model, automated REST APIs, added CI with GitHub Actions and Azure Pipelines, validated data in MySQL, and tested an Android app for security issues.</p>
+      <p>What I find most interesting is AI testing. I test AI-powered applications for hallucination, bias and prompt injection with automated, repeatable checks. I do not build AI models; I check that AI features behave safely and correctly.</p>
+      <p>I keep learning by building small, practical projects, and I am now adding JMeter to my performance-testing toolkit.</p>
+    </div>
+    <div>
+      <h3 style="margin-bottom:1rem">Professional journey</h3>
+      <ol class="timeline" id="timeline" aria-label="Career and education timeline"></ol>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="alt" id="skills" aria-labelledby="skills-title">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="skills-title">Skills</h2><p class="lede">Highlighted skills are the ones I use most in my current automation work.</p></div>
+    <div class="grid g3" id="skills-grid"></div>
+  </div>
+</section>
+
+<!-- TESTING EXPERTISE -->
+<section id="testing" aria-labelledby="testing-title">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="testing-title">Testing expertise</h2><p class="lede">What I test, how, and with which tools.</p></div>
+    <div class="grid g3" id="testing-grid"></div>
+  </div>
+</section>
+
+<!-- AI TESTING -->
+<section class="alt" id="ai" aria-labelledby="ai-title">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="ai-title">AI Testing &amp; Quality Engineering</h2></div>
+    <p class="notice"><strong>I test AI-powered applications; I do not develop AI models.</strong> My work is AI application testing: checking how an AI feature behaves, with automated and repeatable tests.</p>
+    <h3>How an AI check runs</h3>
+    <div class="flow" role="group" aria-label="AI testing workflow">
+      <span class="n">Prompt</span><span class="ar" aria-hidden="true"></span>
+      <span class="n">AI response</span><span class="ar" aria-hidden="true"></span>
+      <span class="n">Validation</span><span class="ar" aria-hidden="true"></span>
+      <span class="n">Evaluation</span><span class="ar" aria-hidden="true"></span>
+      <span class="n">Score</span><span class="ar" aria-hidden="true"></span>
+      <span class="n pass">Pass / Fail</span>
+    </div>
+    <div class="ai-panel">
+      <div class="card">
+        <h3>Playwright AI testing module</h3>
+        <p>Built inside my Playwright framework, so AI tests run next to my UI and API tests.</p>
+        <ul class="pills" aria-label="Areas tested in the Playwright module">
+          <li class="key">Hallucination</li><li class="key">Bias</li><li class="key">Prompt injection</li><li>Automated evaluation</li>
+        </ul>
+        <p class="tools" style="margin-top:1rem"><b>Implementation:</b> Playwright + Groq API + automated evaluator with scoring + data-driven prompts.</p>
+      </div>
+      <div class="card">
+        <h3>Wider evaluation on a demo website</h3>
+        <p>I extended the checks to broader quality areas on a demo website.</p>
+        <ul class="pills" aria-label="Areas evaluated on a demo website">
+          <li>Accuracy</li><li>Groundedness</li><li>Consistency</li><li>Safety</li><li>RAG</li><li>AI regression</li>
+        </ul>
+        <p class="tools" style="margin-top:1rem"><b>AI chat support testing:</b> bias, hallucination and prompt injection checks on the AI chat feature of my Luxe Wear site.</p>
+      </div>
+    </div>
+    <div class="big-result" role="group" aria-label="Documented AI test result">
+      <span class="num">6/6</span>
+      <span class="t">AI tests passed</span>
+      <span class="s">in the Playwright AI testing module. No pass counts are recorded for the demo-website evaluations.</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" aria-labelledby="projects-title">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="projects-title">Featured projects</h2><p class="lede">Practical QA/SDET work with documented results. Case studies follow below the cards.</p></div>
+    <div class="grid g2" id="projects-grid"></div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="alt" id="case-studies" aria-labelledby="cases-title">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="cases-title">Case studies</h2></div>
+
+    <article class="case" id="case-playwright" aria-labelledby="cs-pw">
+      <h3 id="cs-pw">Playwright UI + API automation framework</h3>
+      <p class="lede" style="margin-bottom:0"><strong>Purpose.</strong> Replace repeated manual checks with an automation suite that covers UI and API behaviour, reports results to test management, and runs in CI.</p>
+      <div class="flow" role="group" aria-label="Framework architecture">
+        <span class="n hl">Playwright</span><span class="ar" aria-hidden="true"></span>
+        <span class="n">Page Object Model</span><span class="ar" aria-hidden="true"></span>
+        <span class="n">Reusable locators</span><span class="ar" aria-hidden="true"></span>
+        <span class="n">UI / API tests</span><span class="ar" aria-hidden="true"></span>
+        <span class="n">Assertions</span><span class="ar" aria-hidden="true"></span>
+        <span class="n">JUnit reports</span><span class="ar" aria-hidden="true"></span>
+        <span class="n">Jira / Xray</span><span class="ar" aria-hidden="true"></span>
+        <span class="n">CI/CD</span>
+      </div>
+      <div class="two">
+        <div>
+          <h4>What I built</h4>
+          <ul>
+            <li>UI tests with the Page Object Model, assertions, auto-waiting and dialog handling across 6 web applications, including The Internet (Herokuapp).</li>
+            <li>API tests with Bearer-token authentication and request chaining against reqres.in and DummyJSON.</li>
+            <li>JUnit reporting configured to sync results to Jira/Xray.</li>
+            <li>CI runs in GitHub Actions and Azure Pipelines.</li>
+          </ul>
+          <p class="tools"><b>Technologies:</b> Playwright, JavaScript, POM, GitHub Actions, Jira/Xray, JUnit.</p>
+          <p class="tools"><b>Testing:</b> UI, API, E2E, regression.</p>
+        </div>
+        <div>
+          <h4>Results</h4>
+          <div class="tbl-wrap"><table>
+            <caption class="sr" style="position:absolute;left:-999px">Playwright framework test results</caption>
+            <thead><tr><th scope="col">Suite</th><th scope="col">Result</th></tr></thead>
+            <tbody>
+              <tr><td>UI tests</td><td>12 passed</td></tr>
+              <tr><td>API tests</td><td>4 passed</td></tr>
+              <tr><td>Authenticated API tests</td><td>2 passed</td></tr>
+              <tr><td><strong>Total</strong></td><td><strong>18/18 passed</strong></td></tr>
+              <tr><td>Xray test cases</td><td>12/12 covered (1 Epic, 3 Stories)</td></tr>
+            </tbody>
+          </table></div>
+          <div class="links" style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem">
+            <a class="btn btn-outline btn-sm" href="https://github.com/Iqra3719" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-outline btn-sm" href="https://github.com/Iqra3719/playwright-test/actions" target="_blank" rel="noopener">GitHub Actions runs</a>
+            <a class="btn btn-outline btn-sm" href="https://bitbucket.org/iqrach/workspace/overview/" target="_blank" rel="noopener">Bitbucket</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case" id="case-salesforce" aria-labelledby="cs-sf">
+      <h3 id="cs-sf">Salesforce automation and OAuth 2.0 API testing</h3>
+      <p class="lede" style="margin-bottom:0">Two pieces of work: an automated Opportunity-creation workflow in the Salesforce UI, and API authentication with OAuth 2.0.</p>
+      <div class="two">
+        <div>
+          <h4>Opportunity automation</h4>
+          <p style="margin-bottom:.5rem">Recorded the flow with Playwright codegen, then edited the script until it ran reliably.</p>
+          <p class="tools"><b>Technologies:</b> Playwright, JavaScript, Salesforce.</p>
+          <h4 style="margin-top:1.2rem">OAuth 2.0 API testing</h4>
+          <p style="margin-bottom:.5rem">Implemented the Client Credentials and Authorization Code flows with automated token retrieval in Postman.</p>
+          <p class="tools"><b>Technologies:</b> Postman, OAuth 2.0, Salesforce.</p>
+        </div>
+        <div>
+          <h4>Issues I resolved</h4>
+          <div class="tbl-wrap"><table>
+            <caption class="sr" style="position:absolute;left:-999px">Salesforce automation issues and fixes</caption>
+            <thead><tr><th scope="col">Issue</th><th scope="col">Fix</th></tr></thead>
+            <tbody>
+              <tr><td>Two-step login</td><td>Split login into username and password steps with a wait between them</td></tr>
+              <tr><td>Email verification</td><td>Handled the verification-code step with a manual pause</td></tr>
+              <tr><td>Timing / synchronization</td><td>Waited for the page to load before clicking</td></tr>
+              <tr><td>Required fields</td><td>Created the required Account record first</td></tr>
+              <tr><td>Expiring recorded codes</td><td>Removed one-time codes captured by codegen</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case" id="case-database" aria-labelledby="cs-db">
+      <h3 id="cs-db">E-commerce database QA (MySQL)</h3>
+      <p class="lede" style="margin-bottom:0">A four-table e-commerce database used to practise database testing: constraints, joins and calculated totals.</p>
+      <div class="schema" role="group" aria-label="Database tables">
+        <div class="tb"><b>users</b><span>UNIQUE and DEFAULT constraints</span></div>
+        <div class="tb"><b>products</b><span>Referenced by order_details</span></div>
+        <div class="tb"><b>orders</b><span>Foreign key to users</span></div>
+        <div class="tb"><b>order_details</b><span>Foreign keys to orders and products</span></div>
+      </div>
+      <div class="flow" role="group" aria-label="Database test flow">
+        <span class="n hl">Schema with foreign keys</span><span class="ar" aria-hidden="true"></span>
+        <span class="n">Constraints</span><span class="ar" aria-hidden="true"></span>
+        <span class="n">JOIN validation</span><span class="ar" aria-hidden="true"></span>
+        <span class="n">Order total validation</span><span class="ar" aria-hidden="true"></span>
+        <span class="n">Positive / negative tests</span>
+      </div>
+      <p class="tools"><b>Technologies:</b> MySQL, SQL. <b>Result:</b> <span class="res-chip">20 queries executed with no errors</span></p>
+    </article>
+
+    <article class="case" id="case-mobile" aria-labelledby="cs-mob">
+      <h3 id="cs-mob">Mobile and security testing (Android APK)</h3>
+      <div class="flow" role="group" aria-label="Mobile testing flow">
+        <span class="n">Android APK</span><span class="ar" aria-hidden="true"></span>
+        <span class="n">Real devices</span><span class="ar" aria-hidden="true"></span>
+        <span class="n hl">BrowserStack</span><span class="ar" aria-hidden="true"></span>
+        <span class="n">Security / functional testing</span><span class="ar" aria-hidden="true"></span>
+        <span class="n pass">4 issues found</span>
+      </div>
+      <div class="two">
+        <div>
+          <h4>Findings</h4>
+          <ul>
+            <li>Missing input validation</li>
+            <li>Debug build (rated High)</li>
+            <li>Screenshots allowed (screenshot exposure)</li>
+            <li>No authentication</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Context</h4>
+          <p style="color:var(--muted)">Findings map to OWASP Mobile risks M7 and M10. I also studied the OWASP Top 10 and OWASP ZAP.</p>
+          <p class="tools"><b>Tools:</b> BrowserStack, OWASP (ZAP and Top 10 studied).</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="case" id="case-devops" aria-labelledby="cs-dev">
+      <h3 id="cs-dev">Docker and CI/CD</h3>
+      <p class="lede" style="margin-bottom:0">A compact look at the engineering side of my QA work. I use these tools to run and ship tests; I am not presenting myself as a DevOps specialist.</p>
+      <div class="two">
+        <div>
+          <h4>Node.js Docker application</h4>
+          <div class="flow" role="group" aria-label="Docker workflow">
+            <span class="n">Node.js app</span><span class="ar" aria-hidden="true"></span>
+            <span class="n">Dockerfile</span><span class="ar" aria-hidden="true"></span>
+            <span class="n hl">Image</span><span class="ar" aria-hidden="true"></span>
+            <span class="n">Container</span><span class="ar" aria-hidden="true"></span>
+            <span class="n pass">Local verification</span>
+          </div>
+        </div>
+        <div>
+          <h4>Pipelines</h4>
+          <ul class="pills" aria-label="CI/CD capabilities">
+            <li class="key">GitHub Actions</li><li class="key">Azure Pipelines</li><li>JUnit results</li><li>Build artifacts</li><li>Scheduled runs</li><li>Branch policies</li><li>Azure App Service</li>
+          </ul>
+          <p class="tools"><b>Result:</b> Azure pipeline run succeeded.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="case" id="case-luxewear" aria-labelledby="cs-lux">
+      <h3 id="cs-lux">Luxe Wear e-commerce web application</h3>
+      <div class="two">
+        <div>
+          <h4>The product</h4>
+          <ul>
+            <li>Product catalog and shopping cart</li>
+            <li>WhatsApp ordering</li>
+            <li>Database-backed admin panel with image upload</li>
+            <li>YouTube and social media integration</li>
+            <li>Responsive, mobile-first UI</li>
+          </ul>
+          <p class="tools"><b>Stack:</b> Next.js, Tailwind CSS, Supabase, Playwright.</p>
+          <p style="margin-top:1rem"><a class="btn btn-primary" href="https://luxe-wear-pk.netlify.app" target="_blank" rel="noopener">View Live Project
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></p>
+        </div>
+        <div>
+          <h4>My QA contribution</h4>
+          <ul>
+            <li>Tested the site with Playwright automation.</li>
+            <li>AI testing of the AI chat support feature: bias, hallucination and prompt injection.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" aria-labelledby="exp-title">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="exp-title">Experience</h2></div>
+    <div id="experience-list"></div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS + EDUCATION -->
+<section class="alt" id="certifications" aria-labelledby="cert-title">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="cert-title">Certifications</h2></div>
+    <div class="grid g3" id="cert-grid"></div>
+    <div class="sec-head" style="margin-top:3rem"><h2 id="edu-title">Education</h2></div>
+    <div class="grid g2" id="edu-grid"></div>
+  </div>
+</section>
+
+<!-- CODE & WORK -->
+<section id="code" aria-labelledby="code-title">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="code-title">Code &amp; work</h2></div>
+    <div class="grid g3" id="links-grid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="alt contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <h2 id="contact-title">Let&rsquo;s build better software through better testing.</h2>
+    <p class="avail"><i aria-hidden="true"></i>Available for QA / SDET opportunities</p>
+    <ul class="contact-list">
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><div><small>Email</small><a href="mailto:ciqra632@gmail.com">ciqra632@gmail.com</a></div></li>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><div><small>Phone</small><a href="tel:+923060651768">+92 306 0651768</a></div></li>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><div><small>LinkedIn</small><a href="https://linkedin.com/in/iqra-afzal-ab0a7b3a0" target="_blank" rel="noopener">linkedin.com/in/iqra-afzal-ab0a7b3a0</a></div></li>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg><div><small>GitHub</small><a href="https://github.com/Iqra3719" target="_blank" rel="noopener">github.com/Iqra3719</a></div></li>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><small>Location</small><span>Kot Lakhpat, Lahore, Pakistan</span></div></li>
+    </ul>
+    <div class="cta-row" style="margin:0">
+      <a class="btn btn-primary" href="mailto:ciqra632@gmail.com">Send an email</a>
+      <a class="btn btn-ghost" href="Iqra_Afzal_Resume_Final.pdf" target="_blank" rel="noopener">Download resume</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <p><strong>Iqra Afzal</strong></p>
+      <p class="muted">QA Engineer | SDET</p>
+    </div>
+    <ul aria-label="Footer links">
+      <li><a href="https://github.com/Iqra3719" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/iqra-afzal-ab0a7b3a0" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:ciqra632@gmail.com">Email</a></li>
+    </ul>
+    <p class="muted">&copy; 2026 Iqra Afzal</p>
+  </div>
+</footer>
+
+<script>
+/* ============ CONTENT DATA (edit here; replace every "[ADD INFORMATION]" entry) ============ */
+const ADD = 'Project details not yet documented';
+const DATA = {
+  metrics: [
+    {n:18, suffix:'/18', label:'Playwright tests passed'},
+    {n:6,  suffix:'/6',  label:'AI tests passed'},
+    {n:12, suffix:'/12', label:'Xray test cases covered'},
+    {n:20, suffix:'',    label:'SQL queries executed without errors'},
+    {n:4,  suffix:'',    label:'Mobile / security issues identified'}
+  ],
+  timeline: [
+    {when:'2011\u20132015 \u00b7 2018\u20132020', what:'Computer Science degrees', detail:'BSCS and MSCS, Lahore College for Women University'},
+    {when:'Dec 2020 \u2013 Jun 2021', what:'QA Tester (Manual), Black Ibex', detail:'Manual testing of web applications'},
+    {when:'Dec 2021 \u2013 Mar 2022', what:'SQA Intern, Mobit Solutions', detail:'PSEB ICT Internship Program; SQA certification (PSEB, 2022)'},
+    {when:'2023 \u2013 2024', what:'Selenium and Generative AI learning', detail:'Selenium coursework (Black Ibex); Generative AI for Software Engineers (DeepLearning.AI)'},
+    {when:'Jun 2025 \u2013 Aug 2026', what:'SQA Engineer, Woodex Organization', detail:'Large-scale financial web and mobile applications for a UK-based organization'},
+    {when:'Sep \u2013 Oct 2026', what:'QA/SDET Intern, Ahmad Institute', detail:'Automation, API, AI testing, CI/CD, database, security and mobile testing', now:true}
+  ],
+  skills: [
+    {cat:'Automation', items:['Playwright','JavaScript','Page Object Model','Selenium WebDriver (coursework)','Python (basics)'], key:['Playwright','JavaScript','Page Object Model']},
+    {cat:'API Testing', items:['Postman','Playwright API testing','REST APIs','OAuth 2.0','Request chaining','Mock servers','JSON validation'], key:['Postman','Playwright API testing','REST APIs']},
+    {cat:'Testing Types', items:['Functional','Regression','Smoke','Sanity','Exploratory','UAT','E2E','Cross-browser','Cross-device','Database','Security','Mobile','Performance']},
+    {cat:'AI Testing', items:['Hallucination','Bias','Prompt injection','Accuracy','Groundedness','Consistency','Safety','RAG','AI regression','Groq API','Automated scoring','AI-assisted test case generation','Prompt engineering for QA'], key:['Hallucination','Bias','Prompt injection','Groq API']},
+    {cat:'Performance Testing', items:['JMeter','Postman performance testing']},
+    {cat:'Database', items:['MySQL','SQL queries','Data validation'], key:['MySQL','SQL queries']},
+    {cat:'DevOps / CI/CD', items:['GitHub Actions','Azure Pipelines','Docker','JUnit reporting','Linux/Ubuntu','Azure App Service','Netlify','Vercel'], key:['GitHub Actions','Azure Pipelines','Docker']},
+    {cat:'Test Management', items:['Jira','Xray','Azure Boards','Azure Test Plans'], key:['Jira','Xray']},
+    {cat:'Security & Mobile', items:['OWASP ZAP','BrowserStack','Android testing']},
+    {cat:'Version Control', items:['Git','GitHub','Bitbucket','SourceTree','Azure Repos']},
+    {cat:'Methodologies', items:['SDLC','STLC','Agile/Scrum','Defect life cycle','Risk-based testing']}
+  ],
+  testing: [
+    {icon:'clipboard', title:'Functional Testing', desc:'Manual testing of web and mobile applications, including test case design and smoke, sanity and exploratory testing. Defects tracked in Jira.', tools:'Jira, Azure Test Plans'},
+    {icon:'code', title:'Automation Testing', desc:'UI automation with the Page Object Model, assertions and auto-waiting. The framework finished with 18/18 tests passing.', tools:'Playwright, JavaScript, POM'},
+    {icon:'globe', title:'API Testing', desc:'REST API testing covering CRUD, authentication, Bearer tokens, request chaining, mock servers and JSON/status code validation.', tools:'Postman, Playwright, OAuth 2.0'},
+    {icon:'refresh', title:'Regression Testing', desc:'Manual regression on an e-commerce flow (6/6 cases passed) and Playwright regression scenarios.', tools:'Playwright, Jira'},
+    {icon:'cpu', title:'AI Testing', desc:'Hallucination, bias and prompt injection tests in Playwright, plus accuracy, groundedness, consistency, safety, RAG and AI regression checks on a demo website.', tools:'Playwright, Groq API'},
+    {icon:'database', title:'Database Testing', desc:'Positive and negative tests on a MySQL e-commerce schema covering constraints, JOINs and order totals. 20 queries, no errors.', tools:'MySQL, SQL'},
+    {icon:'shield', title:'Security Testing', desc:'Security testing of an Android APK, mapped to OWASP M7 and M10. Earlier: security testing of authentication and access control modules.', tools:'BrowserStack, OWASP ZAP, OWASP Top 10'},
+    {icon:'phone', title:'Mobile Testing', desc:'Real-device Android testing, plus mobile and cross-device testing in earlier roles.', tools:'BrowserStack'},
+    {icon:'gauge', title:'Performance Testing', desc:'Performance testing with Postman and hands-on practice with JMeter. Detailed JMeter project information is not yet documented.', tools:'Postman, JMeter'},
+    {icon:'branch', title:'CI/CD Testing', desc:'Playwright runs in GitHub Actions and Azure Pipelines with JUnit results, artifacts and scheduled runs.', tools:'GitHub Actions, Azure Pipelines, Docker'}
+  ],
+  projects: [
+    {name:'Playwright UI + API Automation Framework', featured:true, anchor:'#case-playwright',
+      desc:'A UI and API automation framework built during my QA/SDET internship, running in CI.',
+      contrib:'Built UI tests with the Page Object Model, reusable locators, assertions, auto-waiting and dialog handling; added authenticated API tests with request chaining; configured JUnit reporting to sync results to Jira/Xray.',
+      tech:['Playwright','JavaScript','POM','GitHub Actions','Jira/Xray','JUnit'], testing:'UI, API, E2E, regression',
+      result:'18/18 tests passed (12 UI, 4 API, 2 authenticated API); 12/12 Xray test cases covered',
+      links:[{t:'GitHub',h:'https://github.com/Iqra3719'},{t:'Actions runs',h:'https://github.com/Iqra3719/playwright-test/actions'},{t:'Bitbucket',h:'https://bitbucket.org/iqrach/workspace/overview/'}]},
+    {name:'AI Testing Module', featured:true, anchor:'#ai',
+      desc:'Automated tests for AI-generated responses, built inside the Playwright framework. AI application testing, not model development.',
+      contrib:'Tested hallucination, bias and prompt injection with Groq API integration, automated scoring and data-driven prompts. Also evaluated accuracy, groundedness, consistency, safety, RAG and AI regression on a demo website.',
+      tech:['Playwright','JavaScript','Groq API'], testing:'AI testing, API testing',
+      result:'6/6 AI tests passed', links:[]},
+    {name:'Salesforce Opportunity Automation', anchor:'#case-salesforce',
+      desc:'Automated creation of a Salesforce Opportunity.',
+      contrib:'Recorded the flow with Playwright codegen and resolved 5 issues: two-step login, email verification, timing, required fields and expiring recorded codes.',
+      tech:['Playwright','JavaScript','Salesforce'], testing:'UI and workflow automation',
+      result:'Workflow automated after resolving 5 issues', links:[]},
+    {name:'Salesforce OAuth 2.0 API Testing', anchor:'#case-salesforce',
+      desc:'API authentication testing against Salesforce.',
+      contrib:'Implemented the Client Credentials and Authorization Code flows with automated token retrieval in Postman.',
+      tech:['Postman','OAuth 2.0','Salesforce'], testing:'API and authentication testing',
+      result:null, links:[]},
+    {name:'E-Commerce Database QA', anchor:'#case-database',
+      desc:'A MySQL e-commerce database used to practise database testing.',
+      contrib:'Designed 4 related tables with foreign keys and UNIQUE/DEFAULT constraints; ran positive and negative tests, JOIN checks and order-total validation.',
+      tech:['MySQL','SQL'], testing:'Database testing, data validation',
+      result:'20 queries executed with no errors', links:[]},
+    {name:'Mobile & Security Testing (Android APK)', anchor:'#case-mobile',
+      desc:'Security and functional testing of an Android APK on real devices.',
+      contrib:'Ran tests in BrowserStack and identified missing input validation, a debug build, screenshots allowed and no authentication, mapped to OWASP M7 and M10.',
+      tech:['BrowserStack','OWASP'], testing:'Mobile, security, functional',
+      result:'4 issues identified', links:[]},
+    {name:'Node.js Docker Application', anchor:'#case-devops',
+      desc:'A small containerized Node.js application.',
+      contrib:'Wrote the Dockerfile, built the image, ran the container and verified local execution.',
+      tech:['Node.js','Docker'], testing:'Execution verification',
+      result:'Container built and verified locally', links:[]},
+    {name:'Luxe Wear E-Commerce Web Application', anchor:'#case-luxewear',
+      desc:'A full e-commerce site with catalog, cart, WhatsApp ordering, an admin panel with image upload, social integration and a mobile-first UI.',
+      contrib:'Tested the site with Playwright automation and ran AI testing on its AI chat support feature for bias, hallucination and prompt injection.',
+      tech:['Next.js','Tailwind CSS','Supabase','Playwright'], testing:'Automation testing, AI testing',
+      result:'Deployed and live', links:[{t:'View Live Project',h:'https://luxe-wear-pk.netlify.app'}]}
+  ],
+  roles: [
+    {title:'QA / SDET Intern', org:'Ahmad Institute', meta:'Remote \u00b7 3 Sep 2026 \u2013 2 Oct 2026', open:true, bullets:[
+      'Built a Playwright and JavaScript automation framework with the Page Object Model, assertions, auto-waiting and dialog handling, covering UI and API tests across 6 web applications; 18/18 tests passed.',
+      'Automated REST API tests with Bearer-token authentication and request chaining, and tested APIs in Postman. Implemented Salesforce OAuth 2.0 (Client Credentials and Authorization Code) and automated Salesforce Opportunity creation.',
+      'Set up CI/CD in GitHub Actions and Azure Pipelines with JUnit results, caching, scheduled runs, artifacts and branch policies. Managed test cases in Jira/Xray (12/12 covered) and Azure Boards/Test Plans.',
+      'Built an AI testing module inside the Playwright framework (hallucination, bias, prompt injection) using the Groq API, with automated scoring and data-driven prompts; 6/6 AI tests passed. Also evaluated accuracy, groundedness, consistency, safety, RAG and AI regression on a demo website.',
+      'Designed a MySQL e-commerce QA database and validated it with positive and negative tests. Tested an Android APK on real devices and found 4 security and quality issues.',
+      'Containerized a Node.js app with Docker, practised Linux/Ubuntu and Git workflows, and ran manual and Playwright regression testing.']},
+    {title:'Software Quality Assurance Engineer', org:'Woodex Organization, Lahore, Pakistan', meta:'Jun 2025 \u2013 Aug 2026', bullets:[
+      'Performed end-to-end manual testing for 4 large-scale web and mobile applications for a major UK-based financial organization.',
+      'Designed, executed and maintained test cases, test scenarios and checklists based on business and functional requirements.',
+      'Conducted functional, regression, smoke and sanity testing across each release cycle.',
+      'Performed API testing with Postman, validating request/response data, status codes and error handling for microservices.',
+      'Logged, tracked and managed defects in Jira with clear reproduction steps, severity and priority.',
+      'Maintained QA metrics dashboards in Jira (defect density, test pass rate, test coverage) for stakeholder reporting.',
+      'Collaborated with developers and product teams in Agile ceremonies (sprint planning, daily standups, retrospectives).',
+      'Performed cross-browser and cross-device compatibility testing.']},
+    {title:'Software Quality Assurance Intern', org:'Mobit Solutions (UK-Based), PSEB ICT Internship Program, Lahore, Pakistan', meta:'Dec 2021 \u2013 Mar 2022', bullets:[
+      'Executed manual testing across web and mobile interfaces; authored and maintained test cases, checklists and test data.',
+      'Performed functional, regression and exploratory testing, comparing actual results against requirements.',
+      'Participated in defect triage and root-cause analysis sessions with the development team.',
+      'Documented test results and delivered clear defect reports to developers via Jira.',
+      'Contributed to Agile/Scrum ceremonies; performed re-testing and regression testing after bug fixes.']},
+    {title:'QA Tester (Manual Testing)', org:'Black Ibex Organization, Lahore, Pakistan', meta:'Dec 2020 \u2013 Jun 2021', bullets:[
+      'Executed manual test cases for web applications, comparing results with requirements to identify and report defects.',
+      'Verified website functionality, links, forms and content accuracy across browsers.',
+      'Supported content and SEO quality checks.']}
+  ],
+  certs: [
+    {name:'Software Quality Assurance (SQA)', org:'Ahmad Institute', year:'2026', prime:true},
+    {name:'Playwright Automation Testing', org:'QA Bootcamp', year:'2026', prime:true},
+    {name:'Software Quality Assurance (SQA)', org:'Pakistan Software Export Board (PSEB)', year:'2022'},
+    {name:'Selenium Automation Testing (Coursework)', org:'Black Ibex', year:'2023'},
+    {name:'Generative AI for Software Engineers', org:'DeepLearning.AI, Coursera', year:'2024'},
+    {name:'Web Technologies', org:'TEKXON', year:'2016'},
+    {name:'Web Essentials', org:'TEKXON', year:'2013'}
+  ],
+  education: [
+    {deg:'Master of Science in Computer Science (MSCS)', uni:'Lahore College for Women University (LCWU), Lahore', years:'2018 \u2013 2020', cgpa:'3.68/4.0'},
+    {deg:'Bachelor of Science in Computer Science (BSCS)', uni:'Lahore College for Women University (LCWU), Lahore', years:'2011 \u2013 2015', cgpa:'3.30/4.0'}
+  ],
+  links: [
+    {t:'GitHub', u:'github.com/Iqra3719', h:'https://github.com/Iqra3719'},
+    {t:'GitHub Actions (Playwright runs)', u:'github.com/Iqra3719/playwright-test/actions', h:'https://github.com/Iqra3719/playwright-test/actions'},
+    {t:'Bitbucket', u:'bitbucket.org/iqrach/workspace/overview/', h:'https://bitbucket.org/iqrach/workspace/overview/'},
+    {t:'Luxe Wear (live website)', u:'luxe-wear-pk.netlify.app', h:'https://luxe-wear-pk.netlify.app'},
+    {t:'LinkedIn', u:'linkedin.com/in/iqra-afzal-ab0a7b3a0', h:'https://linkedin.com/in/iqra-afzal-ab0a7b3a0'}
+  ]
+};
+
+/* ============ RENDERING ============ */
+const ICONS = {
+  clipboard:'<path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/>',
+  code:'<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>',
+  globe:'<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+  refresh:'<polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>',
+  cpu:'<rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/>',
+  database:'<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>',
+  shield:'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+  phone:'<rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>',
+  gauge:'<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
+  branch:'<line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/>',
+  award:'<circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>',
+  ext:'<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>',
+  git:'<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>',
+  link:'<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>'
+};
+const svg = (n, cls) => '<svg class="ico' + (cls ? ' ' + cls : '') + '" viewBox="0 0 24 24" aria-hidden="true">' + ICONS[n] + '</svg>';
+const $ = id => document.getElementById(id);
+const pills = (items, key, small) => '<ul class="pills' + (small ? ' small' : '') + '">' + items.map(i => '<li' + (key && key.includes(i) ? ' class="key"' : '') + '>' + i + '</li>').join('') + '</ul>';
+
+$('metrics').innerHTML = DATA.metrics.map(m =>
+  '<li><span class="num" data-n="' + m.n + '" data-suffix="' + m.suffix + '">' + m.n + m.suffix + '</span><span class="lab">' + m.label + '</span></li>').join('');
+
+$('timeline').innerHTML = DATA.timeline.map(t =>
+  '<li' + (t.now ? ' class="now"' : '') + '><span class="when">' + t.when + '</span><span class="what">' + t.what + '</span><span class="detail">' + t.detail + '</span></li>').join('');
+
+$('skills-grid').innerHTML = DATA.skills.map(s =>
+  '<div class="card"><h3>' + s.cat + '</h3>' + pills(s.items, s.key) + '</div>').join('');
+
+$('testing-grid').innerHTML = DATA.testing.map(t =>
+  '<div class="card"><div class="t-ico">' + svg(t.icon) + '</div><h3>' + t.title + '</h3><p>' + t.desc + '</p><p class="tools"><b>Tools:</b> ' + t.tools + '</p></div>').join('');
+
+$('projects-grid').innerHTML = DATA.projects.map(p => {
+  const links = p.links.length
+    ? p.links.map(l => '<a class="btn btn-outline btn-sm" href="' + l.h + '" target="_blank" rel="noopener">' + l.t + svg('ext') + '</a>').join('')
+    : '<span class="addinfo">Repository link: ' + ADD + '</span>';
+  return '<article class="card proj' + (p.featured ? ' feat' : '') + '">' +
+    (p.featured ? '<span class="badge">Featured</span>' : '') +
+    '<h3>' + p.name + '</h3><p>' + p.desc + '</p>' +
+    '<dl><dt>My QA/SDET contribution</dt><dd>' + p.contrib + '</dd>' +
+    '<dt>Technologies</dt><dd>' + pills(p.tech, null, true) + '</dd>' +
+    '<dt>Testing performed</dt><dd>' + p.testing + '</dd></dl>' +
+    '<div class="res">' + (p.result ? '<span class="res-chip">' + p.result + '</span>' : '<span class="addinfo">Key result: ' + ADD + '</span>') + '</div>' +
+    '<div class="links">' + links + '<a href="' + p.anchor + '">Read the case study</a></div></article>';
+}).join('');
+
+$('experience-list').innerHTML = DATA.roles.map(r => {
+  const head = '<div><h3>' + r.title + '</h3><span class="meta">' + r.org + '</span></div><span class="meta">' + r.meta + '</span>';
+  const list = '<ul>' + r.bullets.map(b => '<li>' + b + '</li>').join('') + '</ul>';
+  return r.open
+    ? '<article class="card role"><div class="role-head">' + head + '</div>' + list + '</article>'
+    : '<details class="card role"><summary>' + head + '</summary><div class="body">' + list + '</div></details>';
+}).join('');
+
+$('cert-grid').innerHTML = DATA.certs.map(c =>
+  '<div class="card cert' + (c.prime ? ' prime' : '') + '"><div class="t-ico">' + svg('award') + '</div><div><h3>' + c.name + '</h3><p>' + c.org + ', ' + c.year + '</p></div></div>').join('');
+
+$('edu-grid').innerHTML = DATA.education.map(e =>
+  '<div class="card"><h3>' + e.deg + '</h3><p>' + e.uni + '</p><p style="margin:0">' + e.years + ' &middot; CGPA ' + e.cgpa + '</p></div>').join('');
+
+$('links-grid').innerHTML = DATA.links.map(l =>
+  '<a class="card link-card" href="' + l.h + '" target="_blank" rel="noopener"><span><span class="lt">' + l.t + '</span><span class="lu">' + l.u + '</span></span><span class="ext">' + svg('ext') + '</span></a>').join('');
+
+/* ============ BEHAVIOUR ============ */
+(function(){
+  const root = document.documentElement;
+  const themeBtn = $('themeBtn');
+  try { const saved = localStorage.getItem('theme'); if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved); } catch (e) {}
+  themeBtn.addEventListener('click', function(){
+    const isDark = root.getAttribute('data-theme') === 'dark' ||
+      (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    const next = isDark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+
+  const nav = $('nav'), menuBtn = $('menuBtn');
+  function setMenu(open){ nav.classList.toggle('open', open); menuBtn.setAttribute('aria-expanded', String(open)); menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); }
+  menuBtn.addEventListener('click', function(){ setMenu(!nav.classList.contains('open')); });
+  nav.addEventListener('click', function(e){ if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); menuBtn.focus(); } });
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // counters (real metrics only)
+  const nums = document.querySelectorAll('.metrics .num');
+  function run(el){
+    const n = +el.dataset.n, suf = el.dataset.suffix;
+    if (reduce) { el.textContent = n + suf; return; }
+    const t0 = performance.now(), dur = 900;
+    (function tick(t){ const p = Math.min((t - t0) / dur, 1); el.textContent = Math.round(n * p) + suf; if (p < 1) requestAnimationFrame(tick); })(t0);
+  }
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(function(es){ es.forEach(function(en){ if (en.isIntersecting) { run(en.target); io.unobserve(en.target); } }); }, {threshold:.6});
+    nums.forEach(function(n){ io.observe(n); });
+
+    // nav highlight
+    const links = Array.from(document.querySelectorAll('nav.main a.nl'));
+    const map = {}; links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+    const ids = Object.keys(map).concat(['case-studies']);
+    const so = new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if (en.isIntersecting) {
+          const id = en.target.id === 'case-studies' ? 'projects' : en.target.id;
+          links.forEach(function(a){ a.removeAttribute('aria-current'); });
+          if (map[id]) map[id].setAttribute('aria-current', 'true');
+        }
+      });
+    }, {rootMargin:'-40% 0px -55% 0px'});
+    ids.forEach(function(id){ const s = document.getElementById(id); if (s) so.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
